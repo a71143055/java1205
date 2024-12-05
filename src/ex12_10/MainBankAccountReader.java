@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class MainBankAccountReader {
     public static void main(String[] args) {
-        File file = new File("result_account.txt");
+        File file = new File("./result_account.txt");
         try {
             FileReader fr = new FileReader(file);
             int ch;
