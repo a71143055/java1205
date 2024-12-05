@@ -52,7 +52,7 @@ public class OrderInfoView extends JPanel {
         };
 
         table = new JTable(tableModel);
-
-        panC.add(table);
+        JScrollPane scrollPane = new JScrollPane(table);
+        panC.add(scrollPane);
     }
 }
