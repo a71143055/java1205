@@ -27,6 +27,7 @@ public class OrderInfoView extends JPanel {
 
         addPan1();
         addPan2();
+        addTable();
     }
 
     public void addPan1() {
@@ -51,5 +52,7 @@ public class OrderInfoView extends JPanel {
         };
 
         table = new JTable(tableModel);
+
+        panC.add(table);
     }
 }
