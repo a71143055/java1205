@@ -18,6 +18,9 @@ public class MainFrame extends JFrame {
         double sw = dimension.getWidth();
         double sh = dimension.getHeight();
 
+        FRAME_X = (int)((0.5)*(sw - FRAME_WIDTH));
+        FRAME_Y = (int)((0.5)*(sh - FRAME_HEIGHT));
+
         setLocation(FRAME_X, FRAME_Y);
         setSize(FRAME_WIDTH,FRAME_HEIGHT);
         setVisible(true);
