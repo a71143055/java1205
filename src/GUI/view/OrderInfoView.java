@@ -72,5 +72,11 @@ public class OrderInfoView extends JPanel {
     public void initList() {
         OrderRepository orderRepository = new OrderRepository();
         ArrayList<OrderEntity> orderList = orderRepository.getOrderList();
+        tableModel.setRowCount(orderList.size());
+        int i = 0;
+        for (OrderEntity orderEntity : orderList) {
+            table.setValueAt(orderEntity.getOrderNum(),i,0);
+            i++;
+        }
     }
 }
