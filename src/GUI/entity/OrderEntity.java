@@ -53,4 +53,8 @@ public class OrderEntity {
     public void setOrderDate(Timestamp orderDate) {
         this.orderDate = orderDate;
     }
+
+    public void setOrderNum(String orderNum) {
+        this.orderNum = orderNum;
+    }
 }

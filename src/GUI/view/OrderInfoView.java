@@ -1,9 +1,13 @@
 package GUI.view;
 
+import GUI.entity.OrderEntity;
+import GUI.repository.OrderRepository;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class OrderInfoView extends JPanel {
     JPanel panN = new JPanel(new GridLayout(2,1));
@@ -63,5 +67,10 @@ public class OrderInfoView extends JPanel {
 
         JScrollPane scrollPane = new JScrollPane(table);
         panC.add(scrollPane);
+    }
+
+    public void initList() {
+        OrderRepository orderRepository = new OrderRepository();
+        ArrayList<OrderEntity> orderList = orderRepository.getOrderList();
     }
 }
