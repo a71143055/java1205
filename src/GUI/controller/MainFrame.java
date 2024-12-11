@@ -26,6 +26,7 @@ public class MainFrame extends JFrame {
         OrderInfoView orderInfoView = new OrderInfoView();
         add(orderInfoView, "Center");
 
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocation(FRAME_X, FRAME_Y);
         setSize(FRAME_WIDTH,FRAME_HEIGHT);
         setVisible(true);
