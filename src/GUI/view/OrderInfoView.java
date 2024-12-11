@@ -76,6 +76,11 @@ public class OrderInfoView extends JPanel {
         int i = 0;
         for (OrderEntity orderEntity : orderList) {
             table.setValueAt(orderEntity.getOrderNum(),i,0);
+            table.setValueAt(orderEntity.getOrderCustomer(),i,1);
+            table.setValueAt(orderEntity.getOrderProduct(),i,2);
+            table.setValueAt(orderEntity.getAmount(),i,3);
+            table.setValueAt(orderEntity.getDestination(),i,4);
+            table.setValueAt(orderEntity.getOrderDate(),i,5);
             i++;
         }
     }
