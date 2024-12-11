@@ -2,6 +2,7 @@ package GUI.view;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 import java.awt.*;
 
 public class OrderInfoView extends JPanel {
@@ -31,8 +32,8 @@ public class OrderInfoView extends JPanel {
     }
 
     public void addPan1() {
-        JLabel lblTiltle = new JLabel("검색 프로그램");
-        pan1.add(lblTiltle);
+        JLabel lblTitle = new JLabel("검색 프로그램");
+        pan1.add(lblTitle);
     }
 
     public void addPan2() {
@@ -52,6 +53,14 @@ public class OrderInfoView extends JPanel {
         };
 
         table = new JTable(tableModel);
+        TableColumnModel columnModel = table.getColumnModel();
+        columnModel.getColumn(0).setPreferredWidth(50);
+        columnModel.getColumn(1).setPreferredWidth(100);
+        columnModel.getColumn(2).setPreferredWidth(200);
+        columnModel.getColumn(3).setPreferredWidth(50);
+        columnModel.getColumn(4).setPreferredWidth(50);
+        columnModel.getColumn(5).setPreferredWidth(100);
+
         JScrollPane scrollPane = new JScrollPane(table);
         panC.add(scrollPane);
     }
