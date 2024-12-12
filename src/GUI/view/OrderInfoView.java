@@ -7,6 +7,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 public class OrderInfoView extends JPanel {
@@ -33,6 +35,8 @@ public class OrderInfoView extends JPanel {
         addPan1();
         addPan2();
         addTable();
+
+        initList("");
     }
 
     public void addPan1() {
@@ -43,6 +47,13 @@ public class OrderInfoView extends JPanel {
     public void addPan2() {
         JLabel lblSearch = new JLabel("검색어 : ");
         JButton btnSearch = new JButton("검색");
+        btnSearch.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                String searchWord = tfSearch.getText();
+                initList(searchWord);
+            }
+        });
         pan2.add(lblSearch);
         pan2.add(tfSearch);
         pan2.add(btnSearch);
@@ -69,9 +80,9 @@ public class OrderInfoView extends JPanel {
         panC.add(scrollPane);
     }
 
-    public void initList() {
+    public void initList(String searchWord) {
         OrderRepository orderRepository = new OrderRepository();
-        ArrayList<OrderEntity> orderList = orderRepository.getOrderList();
+        ArrayList<OrderEntity> orderList = orderRepository.getOrderList("");
         tableModel.setRowCount(orderList.size());
         int i = 0;
         for (OrderEntity orderEntity : orderList) {
